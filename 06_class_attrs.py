@@ -4,7 +4,7 @@
 
 from random import randint, choice
 
-
+print('\n_____ 1')
 # посчитаем леммингов
 class Lemming:
     pass
@@ -26,7 +26,7 @@ while len(family) < family_size:
     total_lemmings += 1
 print(total_lemmings)
 
-
+print('\n_____ 2')
 # пусть сам класс следит за количеством своих объектов
 class Lemming:
     # можно определять атрибуты на уровне класса, тогда они "привязаны" к классу
@@ -44,7 +44,7 @@ while len(family) < family_size:
     family.append(new_lemming)
 print(Lemming.total)
 
-
+print('\n_____ 3')
 # или даже
 burrow = []
 burrow_depth = randint(90, 100)
@@ -56,6 +56,7 @@ while len(burrow) < burrow_depth:
         family.append(new_lemming)
     burrow.append(family)
 print(Lemming.total)
+print('\n_____ 4')
 print(burrow)
 
 

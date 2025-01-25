@@ -2,7 +2,7 @@
 
 from random import randint, choice
 
-
+print('\n_____ 1')
 # К атрибутам класса можно обратится и через объект
 class Lemming:
     names = ['Peter', 'Anna', 'Nik', 'Sofi', 'Den', 'Lora', 'Bred', ]
@@ -16,12 +16,12 @@ class Lemming:
 
 
 print(Lemming.tail_length)
-
+print('\n_____ ')
 new_lemming = Lemming()
 print(new_lemming.tail_length)
 print(new_lemming)
 
-
+print('\n_____ 2')
 # Атрибут объекта перекрывает атрибут класса
 class Lemming:
     names = ['Peter', 'Anna', 'Nik', 'Sofi', 'Denn', 'Lora', 'Bred', ]
@@ -36,12 +36,12 @@ class Lemming:
 
 
 print(Lemming.tail_length)
-
+print('\n_____ ')
 new_lemming = Lemming()
 print(new_lemming.tail_length)
 print(new_lemming)
 
-
+print('\n_____ 3')
 # типичная ошибка
 class Lemming:
     names = ['Peter', 'Anna', 'Nik', 'Sofi', 'Denn', 'Lora', 'Bred', ]
@@ -51,7 +51,8 @@ class Lemming:
     def __init__(self):
         self.tail_length = randint(15, 25)
         self.name = choice(Lemming.names)
-        self.total = self.total + 1
+        #self.total = self.total + 1
+        Lemming.total += 1
 
     def __str__(self):
         return 'Lemming ' + self.name + ' with tail ' + str(self.tail_length)
@@ -66,23 +67,27 @@ while len(burrow) < burrow_depth:
         new_lemming = Lemming()
         family.append(new_lemming)
     burrow.append(family)
+
+new_lemming = Lemming()
+print(new_lemming.tail_length)
+print(new_lemming)
 print(Lemming.total)
 print(len(burrow))
 
 
 # А что с обычными переменными? все так же как для функций
-
+print('\n_____ 4')
 
 class SomeClass:
 
     def method_one(self):
-        # x = 23
+        x = 23
         print('method_one', x)
 
     def method_two(self):
-        # x = 34
+        x = 34
         def func_one():
-            # x = 56
+            x = 56
             print('func_one', x)
         func_one()
         print('method_two', x)
